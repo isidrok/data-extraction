@@ -32,10 +32,10 @@ jobs:
         working-directory: terraform
 
       - name: Plan
-        run: terraform plan
+        run: terraform plan -lock-timeout=2m
         working-directory: terraform
 
       - name: Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -lock-timeout=2m
         working-directory: terraform
