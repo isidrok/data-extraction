@@ -26,7 +26,7 @@ resource "aws_iam_role_policy" "code_interpreter_s3" {
 }
 
 resource "aws_bedrockagentcore_code_interpreter" "main" {
-  name        = "${var.project}-code-interpreter"
+  name        = replace("${var.project}_code_interpreter", "-", "_")
   description = "Code interpreter sandbox for data extraction"
 
   execution_role_arn = aws_iam_role.code_interpreter.arn
