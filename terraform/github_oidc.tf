@@ -14,6 +14,7 @@ resource "aws_iam_role_policy" "github_actions" {
       Effect = "Allow"
       Action = [
         "s3:*",
+        "dynamodb:*",
         "bedrock:*",
         "iam:*",
         "logs:*",
@@ -34,7 +35,7 @@ resource "aws_iam_role" "github_actions" {
       Action    = "sts:AssumeRoleWithWebIdentity"
       Condition = {
         StringLike = {
-          "token.actions.githubusercontent.com:sub" = "repo:${var.github_org}/${var.github_repo}:*"
+          "token.actions.githubusercontent.com:sub" = "repo:${var.github_org}@${var.github_user_id}/${var.github_repo}@*"
         }
         StringEquals = {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"

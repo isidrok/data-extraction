@@ -15,6 +15,11 @@ variable "github_org" {
   type        = string
 }
 
+variable "github_user_id" {
+  description = "GitHub numeric user/org ID (from the sub claim: repo:org@ID/repo@repoID)"
+  type        = string
+}
+
 variable "github_repo" {
   description = "GitHub repository name"
   type        = string
