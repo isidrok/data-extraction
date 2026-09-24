@@ -3,3 +3,6 @@
 terraform.tfstate
 terraform.tfstate.backup
 *.tfvars
+
+node_modules/
+.env
