@@ -16,6 +16,7 @@ resource "aws_iam_role_policy" "github_actions" {
         "s3:*",
         "dynamodb:*",
         "bedrock:*",
+        "bedrock-agentcore:*",
         "iam:*",
         "logs:*",
       ]
