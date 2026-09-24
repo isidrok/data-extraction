@@ -18,7 +18,7 @@ resource "aws_iam_role" "tfc" {
           "app.terraform.io:aud" = "aws.workload.identity"
         }
         StringLike = {
-          "app.terraform.io:sub" = "organization:${var.tfc_org_id}:project:*:workspace:${var.tfc_workspace}:run_phase:*"
+          "app.terraform.io:sub" = "organization:${var.tfc_org_name}:project:*:workspace:${var.tfc_workspace}:run_phase:*"
         }
       }
     }]

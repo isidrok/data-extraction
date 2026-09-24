@@ -10,10 +10,10 @@ variable "project" {
   default     = "data-extraction"
 }
 
-variable "tfc_org_id" {
-  description = "Terraform Cloud organization ID (e.g. org-xxxx)"
+variable "tfc_org_name" {
+  description = "Terraform Cloud organization name"
   type        = string
-  default     = "org-HdTTZVUag4cEXVgz"
+  default     = "Isidrok"
 }
 
 variable "tfc_workspace" {
