@@ -5,7 +5,7 @@ resource "aws_iam_role" "code_interpreter" {
     Version = "2012-10-17"
     Statement = [{
       Effect    = "Allow"
-      Principal = { Service = "bedrock.amazonaws.com" }
+      Principal = { Service = "bedrock-agentcore.amazonaws.com" }
       Action    = "sts:AssumeRole"
     }]
   })
@@ -26,6 +26,7 @@ resource "aws_iam_role_policy" "code_interpreter_s3" {
 }
 
 resource "aws_bedrockagentcore_code_interpreter" "main" {
+  depends_on = [aws_iam_role.code_interpreter]
   name        = replace("${var.project}_code_interpreter", "-", "_")
   description = "Code interpreter sandbox for data extraction"
 

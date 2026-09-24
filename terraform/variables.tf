@@ -10,20 +10,14 @@ variable "project" {
   default     = "data-extraction"
 }
 
-variable "github_org" {
-  description = "GitHub organization or username that owns the repo"
+variable "tfc_org_id" {
+  description = "Terraform Cloud organization ID (e.g. org-xxxx)"
   type        = string
-  default     = "isidrok"
+  default     = "org-HdTTZVUag4cEXVgz"
 }
 
-variable "github_user_id" {
-  description = "GitHub numeric user/org ID (from the sub claim: repo:org@ID/repo@repoID)"
-  type        = string
-  default     = "24705324"
-}
-
-variable "github_repo" {
-  description = "GitHub repository name"
+variable "tfc_workspace" {
+  description = "Terraform Cloud workspace name"
   type        = string
   default     = "data-extraction"
 }

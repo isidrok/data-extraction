@@ -8,12 +8,12 @@ terraform {
 
   required_version = ">= 1.6"
 
-  backend "s3" {
-    bucket         = "data-extraction-tfstate-427064007577"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-    dynamodb_table = "data-extraction-tfstate-lock"
+  cloud {
+    organization = "Isidrok"
+
+    workspaces {
+      name = "data-extraction"
+    }
   }
 }
 
